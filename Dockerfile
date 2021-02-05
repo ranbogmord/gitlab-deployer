@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --update bash openssh-client libssh2-dev git alpine-sdk
+RUN apk add --update bash openssh-client libssh2-dev git alpine-sdk npm yarn
 
 WORKDIR /tmp
 RUN curl -o- https://curl.haxx.se/download/curl-7.74.0.tar.gz | tar -zxf - && cd curl-7.74.0 && ./configure --with-libssh2 && make && make install
