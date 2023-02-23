@@ -1,8 +1,8 @@
-FROM alpine:latest
+FROM alpine:3.12
 
 ENV CURL_VERSION 7.77.0
 
-RUN apk add --update bash openssh-client libssh2-dev git alpine-sdk npm yarn
+RUN apk add --update bash openssh-client libssh2-dev git alpine-sdk npm yarn composer
 
 WORKDIR /tmp
 RUN curl -o- https://curl.se/download/curl-$CURL_VERSION.tar.gz| tar -zxf - && cd curl-$CURL_VERSION && ./configure --with-libssh2 --with-openssl && make && make install
